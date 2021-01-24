@@ -5,22 +5,29 @@
 
 <h2 class="text-center">All comments with my username</h2>
 <hr />
-@foreach (var comment in Model.Comments)
+@if (Model.Comments.Count() == 0)
 {
-    <div class="row">
-        <div class="col-md-3">
+    <h4 class="text-center">Sorry, but there are no comments with your username. Please visit my <a asp-controller="Home" asp-action="Index" class="card-link">home page</a></h4>
+}
+else
+{
+    @foreach (var comment in Model.Comments)
+    {
+        <div class="row">
+            <div class="col-md-3">
 
-        </div>
-        <div class="col-md-6">
-            <div class="card mt-3">
-                <div class="card-header">
-                    @comment.Username
-                </div>
-                <div class="card-body">
-                    <h5 class="card-text">@comment.Content</h5>
-                    <p class="card-text">Created on: @comment.CreatedOn.ToString("MM/dd/yyyy hh:mm tt")</p>
+            </div>
+            <div class="col-md-6">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        @comment.Username
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-text">@comment.Content</h5>
+                        <p class="card-text">Created on: @comment.CreatedOn.ToString("MM/dd/yyyy hh:mm tt")</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
 }
