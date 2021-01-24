@@ -1,0 +1,26 @@
+﻿@model MyPersonalPage.Web.ViewModels.Comments.OutputViewModels.AllCommentsWithMyUsernameViewModel
+@{
+    ViewData["Title"] = "Comments with my username";
+}
+
+<h2 class="text-center">All comments with my username</h2>
+<hr />
+@foreach (var comment in Model.Comments)
+{
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <div class="card mt-3">
+                <div class="card-header">
+                    @comment.Username
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text">@comment.Content</h5>
+                    <p class="card-text">Created on: @comment.CreatedOn.ToString("MM/dd/yyyy hh:mm tt")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}

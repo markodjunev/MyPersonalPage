@@ -1,0 +1,15 @@
+﻿@using MyPersonalPage.Common
+@{
+    this.ViewData["Title"] = "Home Page";
+}
+
+<div class="mt-5 jumbotron bg-cover text-white"
+     style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://res.cloudinary.com/dzheivzqv/image/upload/v1599251094/QPhotoM/home_a7fhp2.jpg)">
+    <h1 class="display-4">Marko Djunev</h1>
+    <p class="lead">
+        This is the personal page of a guy whose passions are photography and web development.
+    </p>
+    <hr class="my-4">
+    <p>Explore the world with those you like.</p>
+    <a asp-controller="Home"asp-action="Photography" class="btn btn-primary btn-lg" role="button">See my photography</a>
+</div>
